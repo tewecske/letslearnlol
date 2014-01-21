@@ -13,7 +13,7 @@ import java.util.Locale;
 public class LeagueVersionTest {
 
     @Test
-    public void testInit() throws Exception {
+    public void testToString() throws Exception {
         LeagueVersion leagueVersion = new LeagueVersion();
         leagueVersion.setVersion("4.1.2");
         leagueVersion.setLocale(Locale.US);
@@ -29,6 +29,26 @@ public class LeagueVersionTest {
     }
 
     @Test
+    public void testEqualsAndHashCode() throws Exception {
+        LeagueVersion leagueVersion1 = new LeagueVersion();
+        leagueVersion1.setVersion("1");
+        leagueVersion1.setLocale(Locale.US);
+
+        LeagueVersion leagueVersion1b = new LeagueVersion();
+        leagueVersion1b.setVersion("1");
+        leagueVersion1b.setLocale(Locale.US);
+
+        LeagueVersion leagueVersion2 = new LeagueVersion();
+        leagueVersion2.setVersion("2");
+        leagueVersion2.setLocale(Locale.US);
+
+        Assert.assertEquals(leagueVersion1, leagueVersion1b);
+        Assert.assertEquals(leagueVersion1.hashCode(), leagueVersion1b.hashCode());
+        Assert.assertNotEquals(leagueVersion1, leagueVersion2);
+
+    }
+
+    @Test
     public void testLeagueVersionShouldHaveJsonAnnotations() throws Exception {
         Class<?> classToVerify = LeagueVersion.class;
         Field field = classToVerify.getDeclaredField("version");
@@ -37,7 +57,7 @@ public class LeagueVersionTest {
         Assert.assertEquals(field.getAnnotation(JsonProperty.class).value(), "l");
         field = classToVerify.getDeclaredField("cdnUrl");
         Assert.assertEquals(field.getAnnotation(JsonProperty.class).value(), "cdn");
-        field = classToVerify.getDeclaredField("1profileIconMax");
+        field = classToVerify.getDeclaredField("profileIconMax");
         Assert.assertEquals(field.getAnnotation(JsonProperty.class).value(), "profileiconmax");
     }
 }
