@@ -20,6 +20,7 @@ public class LeagueVersion {
     @JsonProperty("profileiconmax")
     private Integer profileIconMax;
     private String store;
+    @JsonProperty("n")
     private LeagueVersionDetails leagueVersionDetails;
 
     public void setVersion(final String version) {

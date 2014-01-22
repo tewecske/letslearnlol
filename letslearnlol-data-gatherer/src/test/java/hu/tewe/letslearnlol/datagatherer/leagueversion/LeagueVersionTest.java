@@ -59,5 +59,7 @@ public class LeagueVersionTest {
         Assert.assertEquals(field.getAnnotation(JsonProperty.class).value(), "cdn");
         field = classToVerify.getDeclaredField("profileIconMax");
         Assert.assertEquals(field.getAnnotation(JsonProperty.class).value(), "profileiconmax");
+        field = classToVerify.getDeclaredField("leagueVersionDetails");
+        Assert.assertEquals(field.getAnnotation(JsonProperty.class).value(), "n");
     }
 }
