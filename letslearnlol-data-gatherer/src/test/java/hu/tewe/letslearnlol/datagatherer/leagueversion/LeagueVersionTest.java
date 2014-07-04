@@ -1,6 +1,6 @@
 package hu.tewe.letslearnlol.datagatherer.leagueversion;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,7 +16,7 @@ public class LeagueVersionTest {
     public void testToString() throws Exception {
         LeagueVersion leagueVersion = new LeagueVersion();
         leagueVersion.setVersion("4.1.2");
-        leagueVersion.setLocale(Locale.US);
+        leagueVersion.setLocale(Locale.US.toString());
         leagueVersion.setCdnUrl("http://ddragon.leagueoflegends.com/cdn");
         leagueVersion.setDd("3.14.41");
         leagueVersion.setLg("0.152.55");
@@ -32,15 +32,15 @@ public class LeagueVersionTest {
     public void testEqualsAndHashCode() throws Exception {
         LeagueVersion leagueVersion1 = new LeagueVersion();
         leagueVersion1.setVersion("1");
-        leagueVersion1.setLocale(Locale.US);
+        leagueVersion1.setLocale(Locale.US.toString());
 
         LeagueVersion leagueVersion1b = new LeagueVersion();
         leagueVersion1b.setVersion("1");
-        leagueVersion1b.setLocale(Locale.US);
+        leagueVersion1b.setLocale(Locale.US.toString());
 
         LeagueVersion leagueVersion2 = new LeagueVersion();
         leagueVersion2.setVersion("2");
-        leagueVersion2.setLocale(Locale.US);
+        leagueVersion2.setLocale(Locale.US.toString());
 
         Assert.assertEquals(leagueVersion1, leagueVersion1b);
         Assert.assertEquals(leagueVersion1.hashCode(), leagueVersion1b.hashCode());

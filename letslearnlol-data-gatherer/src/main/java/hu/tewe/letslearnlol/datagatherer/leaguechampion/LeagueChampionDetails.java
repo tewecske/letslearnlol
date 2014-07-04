@@ -1,6 +1,7 @@
 package hu.tewe.letslearnlol.datagatherer.leaguechampion;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author: tewe
@@ -11,6 +12,7 @@ public class LeagueChampionDetails {
     private String name;
     @JsonProperty("partype")
     private String parType;
+    private ChampionDetailsInfo info;
 
     public void setId(final String id) {
         this.id = id;
@@ -18,11 +20,6 @@ public class LeagueChampionDetails {
 
     public String getId() {
         return id;
-    }
-
-    @Override
-    public String toString() {
-        return "Ahri";
     }
 
     public void setKey(final String key) {
@@ -47,5 +44,22 @@ public class LeagueChampionDetails {
 
     public String getParType() {
         return parType;
+    }
+
+    public ChampionDetailsInfo getInfo() {
+        return info;
+    }
+
+    public void setInfo(final ChampionDetailsInfo info) {
+        this.info = info;
+    }
+
+    @Override
+    public String toString() {
+        return "LeagueChampionDetails{" +
+                "id='" + id + '\'' +
+                ", key='" + key + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

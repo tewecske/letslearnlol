@@ -1,29 +1,23 @@
 package hu.tewe.letslearnlol.datagatherer.leagueversion;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.slf4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import uk.org.lidalia.slf4jtest.LoggingEvent;
 import uk.org.lidalia.slf4jtest.TestLogger;
 import uk.org.lidalia.slf4jtest.TestLoggerFactory;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.Locale;
 
 import static java.util.Arrays.asList;
 import static org.mockito.Mockito.when;
 import static uk.org.lidalia.slf4jtest.LoggingEvent.error;
-import static uk.org.lidalia.slf4jtest.LoggingEvent.info;
 
 /**
  * @author: tewe
@@ -59,7 +53,7 @@ public class LeagueVersionDaoTest {
         LeagueVersionDao leagueVersionDao = new LeagueVersionDao(objectMapper);
         final LeagueVersion expectedLeagueVersion = new LeagueVersion();
         expectedLeagueVersion.setVersion(version);
-        expectedLeagueVersion.setLocale(locale);
+        expectedLeagueVersion.setLocale(locale.toString());
         when(objectMapper.readValue(url, LeagueVersion.class)).thenReturn(expectedLeagueVersion);
 
         LeagueVersion leagueVersion = leagueVersionDao.getLeagueVersion();

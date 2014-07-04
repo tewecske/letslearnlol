@@ -1,6 +1,6 @@
 package hu.tewe.letslearnlol.datagatherer.leagueversion;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

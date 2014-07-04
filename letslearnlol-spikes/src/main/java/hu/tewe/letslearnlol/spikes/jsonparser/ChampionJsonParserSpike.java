@@ -18,7 +18,7 @@ public class ChampionJsonParserSpike {
 
     public static void main(String[] args) throws IOException {
                 /* JSON provider */
-        URL url = new URL("http://ddragon.leagueoflegends.com/cdn/4.1.13/data/en_US/champion/Ahri.json");
+        URL url = new URL("http://ddragon.leagueoflegends.com/cdn/4.10.7/data/en_US/champion/Ahri.json");
 
         ObjectMapper mapper = new ObjectMapper();
 

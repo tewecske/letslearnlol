@@ -1,7 +1,6 @@
 package hu.tewe.letslearnlol.datagatherer.leaguechampion;
 
-import hu.tewe.letslearnlol.datagatherer.leagueversion.LeagueVersionDetails;
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -20,7 +19,7 @@ public class LeagueChampionDetailsTest {
         leagueChampionDetails.setName("Ahri");
         leagueChampionDetails.setParType("Mana");
 
-        Assert.assertEquals(leagueChampionDetails.toString(), "Ahri");
+        Assert.assertEquals(leagueChampionDetails.toString(), "LeagueChampionDetails{id='Ahri', key='103', name='Ahri'}");
     }
 
     @Test

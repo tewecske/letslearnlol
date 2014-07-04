@@ -1,8 +1,6 @@
 package hu.tewe.letslearnlol.datagatherer.leagueversion;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-
-import java.util.Locale;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author: tewe
@@ -11,7 +9,7 @@ public class LeagueVersion {
     @JsonProperty("v")
     private String version;
     @JsonProperty("l")
-    private Locale locale;
+    private String locale;
     @JsonProperty("cdn")
     private String cdnUrl;
     private String dd;
@@ -31,11 +29,11 @@ public class LeagueVersion {
         return version;
     }
 
-    public void setLocale(final Locale locale) {
+    public void setLocale(final String locale) {
         this.locale = locale;
     }
 
-    public Locale getLocale() {
+    public String getLocale() {
         return locale;
     }
 
